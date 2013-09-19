@@ -1,0 +1,81 @@
+<html>
+<head>
+
+</head>
+<body>
+<script>
+ var db = openDatabase('mydb6', '1.0', 'Test DB6', 2 * 1024 * 1024);
+   db.transaction(function (tx) {
+	tx.executeSql('DROP TABLE logs');
+  tx.executeSql('CREATE TABLE IF NOT EXISTS logs (id unique, log)');
+  tx.executeSql('INSERT INTO LOGS (id, log) VALUES (2, "lvl2")');
+});
+</script>
+
+
+
+
+<img src="https://f.cloud.github.com/assets/2743531/1172568/c71fd474-2124-11e3-9d16-985ab129b98e.jpg" width="320" height="229">
+<br/>
+<input id="txtInput" name="" type="text" value="" />
+
+
+<div id="lblOutput">whats on the picture</div>
+
+<button onClick="addA()">D</button>
+<button onClick="addN()">O</button>
+<button onClick="addD()">G</button>
+<button onClick="checkName()">tjeck</button>
+
+<br/>
+<br/>
+<br/>
+<button onClick="main()">main menu</button>
+
+<script>
+function checkName()
+{
+ userName = txtInput.value;
+
+  if (userName == "DOG")
+  {
+  lblOutput.innerHTML = "KORREKT!";
+  
+   window.open(  "lvl3.html","_self") 
+  
+
+  } 
+  else
+  {
+    lblOutput.innerHTML = "WRONG try again";
+	txtInput.value = "" ;
+  }
+} 
+ 
+ 
+function addA()
+{
+ 
+ txtInput.value = txtInput.value + "D" ;
+}
+
+function addN()
+{
+ txtInput.value = txtInput.value + "O";
+}
+
+function addD()
+{
+ txtInput.value = txtInput.value + "G";
+} 
+
+function main()
+{
+   window.open(  "index.html","_self") 
+  
+} 
+
+</script>
+
+</body>
+</html>
