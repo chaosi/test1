@@ -2,7 +2,19 @@
 <html>
 <head>
 <script type="text/javascript">
- 
+window.onload = selectChoose;
+function selectChoose()
+{
+document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount + " ";
+}
+
+
+function resset()
+{
+ localStorage.clickcount= "0" ;	
+ document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount + " ";
+}
+
 </script>
 
 </head>
@@ -11,8 +23,10 @@
 <button onclick="checklvl()">Start</button>
 <button onclick="changelvl1()">change lvl 1</button>
 <button onclick="changelvl2()">change lvl 2</button>
-
-
+<br/>
+<br/>
+<div id="credits"></div>
+<button onclick="resset()">resset credits</button>
 
 <script>
 function checklvl()
