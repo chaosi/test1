@@ -6,11 +6,12 @@ function selectChoose()
 {
 	if(typeof(Storage)!=="undefined")
 	{
-	localStorage.clickcount = "0";
+
 	document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount ;
 	}
 	else
 	{
+	localStorage.clickcount = "0";
 	document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount ;	
 	}
 }
