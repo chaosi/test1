@@ -1,16 +1,109 @@
 <html>
 <head>
+<script>
+window.onload = selectChoose;
+function selectChoose()
+{
+document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount + " ";
+}
+
+function creditscounter()
+{
+	
+if(typeof(Storage)!=="undefined")
+  {
+  if (localStorage.clickcount)
+    {
+    localStorage.clickcount=Number(localStorage.clickcount)+10;
+    }
+  else
+    {
+    localStorage.clickcount=1;
+    }
+  document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount + " ";
+  }
+else
+  {
+  document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
+  }
+}
+
+
+
+
+
+
+
+//-------------
+function checkName()
+{
+ userName = txtInput.value;
+
+  if (userName == "AND")
+  {
+;
+  
+  lblOutput.innerHTML = "KORREKT!";
+  window.open(  "lvl2.html","_self")
+  if(typeof(Storage)!=="undefined")
+  {
+  if (localStorage.clickcount)
+    {
+    localStorage.clickcount=Number(localStorage.clickcount)+10;
+    }
+  else
+    {
+    localStorage.clickcount=1;
+    }
+  document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount + " ";
+  }
+else
+  {
+  document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
+  }
+  
+   
+   } 
+  else
+  {
+    lblOutput.innerHTML = "WRONG try again";
+	txtInput.value = "" ;
+  }
+} 
+
+
+
+
+
+
+ 
+//------------- 
+function addA()
+{
+ 
+ txtInput.value = txtInput.value + "A" ;
+}
+//-------------
+function addN()
+{
+ txtInput.value = txtInput.value + "N";
+}
+//-------------
+function addD()
+{
+ txtInput.value = txtInput.value + "D";
+} 
+
+//main
+function main()
+{
+   window.open(  "index.html","_self")  
+} 
+
+</script>
 
 </head>
 <body>
-<script>
- var db = openDatabase('mydb6', '1.0', 'Test DB6', 2 * 1024 * 1024);
-   db.transaction(function (tx) {
-	tx.executeSql('DROP TABLE logs');
-  tx.executeSql('CREATE TABLE IF NOT EXISTS logs (id unique, log)');
-  tx.executeSql('INSERT INTO LOGS (id, log) VALUES (1, "lvl1")');
-});
-</script>
 
 
 
@@ -22,60 +115,17 @@
 
 <div id="lblOutput">whats on the picture</div>
 
-<button onclick="addA()">A</button>
-<button onclick="addN()">N</button>
-<button onclick="addD()">D</button>
-<button onclick="checkName()">tjeck</button>
+<button onClick="addA()">A</button>
+<button onClick="addN()">N</button>
+<button onClick="addD()">D</button>
+<button onClick="checkName()">tjeck</button>
+<div id="credits"></div>
 <br/>
 <br/>
 <br/>
 <button onClick="main()">main menu</button>
+<button onClick="creditscounter()">debug</button>
 
-<script>
-function checkName()
-{
- userName = txtInput.value;
-
-  if (userName == "AND")
-  {
-  lblOutput.innerHTML = "KORREKT!";
-  
-   window.open(  "lvl2.html","_self") 
-  
-
-  } 
-  else
-  {
-    lblOutput.innerHTML = "WRONG try again";
-	txtInput.value = "" ;
-  }
-} 
- 
- 
-function addA()
-{
- 
- txtInput.value = txtInput.value + "A" ;
-}
-
-function addN()
-{
- txtInput.value = txtInput.value + "N";
-}
-
-function addD()
-{
- txtInput.value = txtInput.value + "D";
-} 
-
-
-function main()
-{
-   window.open(  "index.html","_self") 
-  
-} 
-
-</script>
 
 </body>
 </html>
