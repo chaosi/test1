@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -23,11 +24,13 @@ function resset()
 <button onclick="checklvl()">Start</button>
 <button onclick="changelvl1()">change lvl 1</button>
 <button onclick="changelvl2()">change lvl 2</button>
+<button onclick="exit()">exit</button>
+<button onclick="navigator.app.exitApp()">navigator.app.exitApp</button>
 <br/>
 <br/>
 <div id="credits"></div>
 <button onclick="resset()">resset credits</button>
-<button onclick="JavaScript:window.close()">exit</button>
+
 
 <script>
 function checklvl()
@@ -55,6 +58,11 @@ function changelvl1()
 function changelvl2()
 {
 	localStorage.currentllvl ="lvl2"
+}
+
+function exit()
+{
+	navigator.app.exitApp()
 }
 
 </script>
