@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+var db = openDatabase('mydb6', '1.0', 'Test DB6', 2 * 1024 * 1024);
+</script>
+
+</head>
+<body>
+<div id="status" name="status">Status Message</div>
+<button onclick="checklvl()">Start</button>
+<button onclick="changelvl1()">change lvl 1</button>
+<button onclick="changelvl2()">change lvl 2</button>
+
+
+
+<script>
+function checklvl()
+{
+db.transaction(function (tx) {
+  tx.executeSql('SELECT log FROM logs ORDER BY log DESC limit 1 ', [], 
+ 
+ function (tx, results) {
+   var len = results.rows.length, i;
+   
+   
+   for (i = 0; i < len; i++){
+	   len = results.rows.item(i).log;
+	   window.open( len + ".html","_self") 
+        }
+ }, null);
+});
+
+}
+</script>
+
+
+
+
+<script>
+function changelvl1()
+{
+db.transaction(function (tx) {
+	tx.executeSql('DROP TABLE logs');
+  tx.executeSql('CREATE TABLE IF NOT EXISTS logs (id unique, log)');
+  tx.executeSql('INSERT INTO LOGS (id, log) VALUES (5, "lvl1")');
+});
+}
+
+function changelvl2()
+{
+db.transaction(function (tx) {
+	tx.executeSql('DROP TABLE logs');
+  tx.executeSql('CREATE TABLE IF NOT EXISTS logs (id unique, log)');
+  tx.executeSql('INSERT INTO LOGS (id, log) VALUES (5, "lvl2")');
+});
+}
+
+</script>
+</body>
+</html>
