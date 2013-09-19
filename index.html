@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<script type="text/javascript">
+<script type="text/javascript" charset="utf-8" src="phonegap-1.0.0.js"></script>
+    <script type="text/javascript" charset="utf-8">
 
 
  
@@ -11,6 +12,8 @@
  
     function onDeviceReady() {
        var db = window.openDatabase('mydb6', '1.0', 'Test DB6', 10000);
+        db.transaction(populateDB, errorCB, successCB);
+        tx.executeSql('INSERT INTO LOGS (id, log) VALUES (5, "lvl1")');
     }
 
 
