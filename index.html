@@ -2,7 +2,19 @@
 <html>
 <head>
 <script type="text/javascript">
-var db = openDatabase('mydb6', '1.0', 'Test DB6', 2 * 1024 * 1024);
+
+/ Wait for PhoneGap to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // PhoneGap is ready
+    //
+    function onDeviceReady() {
+       var db = window.openDatabase('mydb6', '1.0', 'Test DB6', 10000);
+    }
+
+
+
 </script>
 
 </head>
