@@ -18,15 +18,15 @@ body{
 #riddle
 {
 	background-color:#996633;
-	height: 300px;
-	width: 300px;
+	height: 270px;
+	width: 320px;
 	marign-left: 80%;
 	margin-right: 80%;
 	-webkit-box-shadow: 1px 1px 4px 1px rgba(000, 000, 000, 1);
 	box-shadow: 1px 1px 4px 1px rgba(000, 000, 000, 1);
 	-webkit-border-radius: 10px;
 	border-radius: 2px;
-	margin-left: 10px;
+
 }
 
 
@@ -88,10 +88,10 @@ p{
 
 #txtInputAREA
 {
-	width:300px;
+	width:320px;
 	height:35px;
 	padding-bottom:5px;
-	margin-left: 10px;
+	
 	
 	
 }
@@ -119,10 +119,10 @@ p{
 
 #keys
 {
-	width: 300px;
+	width: 320px;
 	height: 30px;
 	margin-bottom: 0px;
-	margin-left: 10px;
+	
 	
 }
 
@@ -134,10 +134,10 @@ p{
 	padding-top: 5px;
 	padding-left: 5px;
 	font-size: 20px;
-	width: 295px;
+	width: 320px;
 	height: 30px;
 	position:relative;
-	margin-left: 10px;
+	
 	margin-top: 0px;
 	background-color:#330000;
 	color: yellow;
