@@ -1,7 +1,14 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css" />
+<script>
+window.popup = window.open($(this).attr('href'), 'Ad', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0');
+ $(window.popup).onload = function()
+        {
+                alert("Popup has loaded a page");
+        };
 
+</scrip>
 
 <script type="text/javascript" src="onloadlvl.js"></script>
 <script type="text/javascript" src="CHECKname.js"></script>
@@ -12,8 +19,7 @@
 
 <body>
 <div id="wrapper">
-<div id="ad"><button  onClick="main()"> <script type="text/javascript" src="http://ad.leadboltads.net/show_app_ad.js?section_id=148120108"></script>
-  </button>
+<div id="ad"> <script type="text/javascript" src="http://ad.leadboltads.net/show_app_ad.js?section_id=148120108"></script>
  
 
  </script>
