@@ -138,7 +138,7 @@ p{
 	height: 30px;
 	position:relative;
 	margin-left: 10px;
-	margin-top: 40px;
+	margin-top: 0px;
 	background-color:#330000;
 	color: yellow;
 	font-family:Verdana, Geneva, sans-serif;
@@ -166,11 +166,12 @@ p{
 
 #wrapper
 {
-
+marign-left:auto;
+margin-right:auto;
 
  width:320px;
  height: auto;
-}
+
 
 #ad{
 	width: 320px;
