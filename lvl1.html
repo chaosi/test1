@@ -1,140 +1,52 @@
 <html>
 <head>
-<script>
-window.onload = selectChoose;
-function selectChoose()
-{
-	if(typeof(Storage)!=="undefined")
-	{
-
-	document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount ;
-	}
-	else
-	{
-	localStorage.clickcount = "0";
-	document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount ;	
-	}
-}
-
-function creditscounter()
-{
-	
-if(typeof(Storage)!=="undefined")
-  {
-  if (localStorage.clickcount)
-    {
-    localStorage.clickcount=Number(localStorage.clickcount)+10;
-    }
-  else
-    {
-    localStorage.clickcount=1;
-    }
-  document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount + " ";
-  }
-else
-  {
-  document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
-  }
-}
+<link rel="stylesheet" type="text/css" href="style.css" />
 
 
-
-
-
-
-
-//-------------
-function checkName()
-{
- userName = txtInput.value;
-
-  if (userName == "AND")
-  {
-
-  localStorage.currentllvl ="lvl2";
-  lblOutput.innerHTML = "KORREKT!";
-  window.open(  "lvl2.html","_self")
-  if(typeof(Storage)!=="undefined")
-  {
-  if (localStorage.clickcount)
-    {
-    localStorage.clickcount=Number(localStorage.clickcount)+10;
-    }
-  else
-    {
-    localStorage.clickcount=1;
-    }
-  document.getElementById("credits").innerHTML=" You have " + localStorage.clickcount + " ";
-  }
-else
-  {
-  document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
-  }
-  
-   
-   } 
-  else
-  {
-    lblOutput.innerHTML = "WRONG try again";
-	txtInput.value = "" ;
-  }
-} 
-
-
-
-
-
-
- 
-//------------- 
-function addA()
-{
- 
- txtInput.value = txtInput.value + "A" ;
-}
-//-------------
-function addN()
-{
- txtInput.value = txtInput.value + "N";
-}
-//-------------
-function addD()
-{
- txtInput.value = txtInput.value + "D";
-} 
-
-//main
-function main()
-{
-   window.open(  "index.html","_self")  
-} 
-
-</script>
-
+<script type="text/javascript" src="onloadlvl.js"></script>
+<script type="text/javascript" src="CHECKname.js"></script>
+<script type="text/javascript" src="ADDkey.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </head>
+
+
 <body>
+<div id="wrapper">
+<div id="ad">
+ <script type="text/javascript" src="http://ad.leadboltads.net/show_app_ad.js?section_id=148120108"></script>
+ </div>
 
 
+<div id="riddle">
+<button id="main" onClick="main()">Menu</button>
+<p>What says quack qyack?</p>
+</div>
 
-
-<img src="https://f.cloud.github.com/assets/2743531/1170128/24958d98-20ca-11e3-928c-372c9ee21018.jpg" width="320" height="229">
 <br/>
-<input id="txtInput" name="" type="text" value="" />
+<div id="txtInputAREA" >
+  <input type="text" readonly  id="txtInput" name="usrname" maxlength="3">
+
+	<button type="text" class="clearbutton"  onClick="checkName()"></button>
+</div>
+
+<div id="lblOutput"></div>
+<div id="keys">
+<button id="A" class="button"   onClick="myFunction('A')">A</button>
+<button id="N" class="button" onClick="myFunction('N')">N</button>
+<button id="D" class="button" onClick="myFunction('D')">D</button>
+<button id="B" class="button" onClick="myFunction('B')">B</button>
+<button id="C" class="button" onClick="myFunction('C')">C</button>
+<button id="H" class="button" onClick="myFunction('H')">H</button>
+<button id="E" class="button" onClick="myFunction('E')">E</button>
+<button id="F" class="button" onClick="myFunction('F')">F</button>
+<button id="G" class="button" onClick="myFunction('G')">G</button>
+<button id="H" class="button" onClick="myFunction('H')">H</button>
+<button id="I" class="button" onclick="myFunction('I')">I</button>
+</div>
+<div id="credits">
+</div>
 
 
-<div id="lblOutput">whats on the picture</div>
-
-<button onClick="addA()">A</button>
-<button onClick="addN()">N</button>
-<button onClick="addD()">D</button>
-<button onClick="checkName()">tjeck</button>
-<div id="credits"></div>
-<br/>
-<br/>
-<br/>
-<button onClick="main()">main menu</button>
-<button onClick="creditscounter()">debug</button>
-
-
+</div>
 </body>
 </html>
